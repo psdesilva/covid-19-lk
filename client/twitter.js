@@ -54,6 +54,9 @@ socket.on('tweetIds', data => {
                     twitterLoader.parentNode.removeChild(twitterLoader);
                     twitterFeeding.classList.add('full-opacity');
                   })
+                  .catch((error) => {
+                    console.log(error)
+                  })
           })
       }
     );
