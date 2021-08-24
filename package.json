@@ -1,0 +1,24 @@
+{
+  "name": "slcovid",
+  "version": "1.0.0",
+  "description": "Web app to display latest tweets on SL COVID-19",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index",
+    "dev": "nodemon server/index"
+  },
+  "author": "Chk Nrs",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "socket.io": "^4.1.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "engines": {
+    "node": "14.17.3"
+  }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="./socket.io/socket.io.js"></script>
+    <script src="https://kit.fontawesome.com/36a728f69b.js" crossorigin="anonymous"></script>
+    <title>COVID-19: Sri Lanka - A Statistics and News Dashboard</title>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>COVID-19 LK: <span style="font-weight: 400;">Stats and News</span></h1>
+        </header>
+        <div id="content">
+            <main id="full-stats">
+                <div id="statistics">
+                    <div id="stats-loader">
+                        <img src="loading.gif" alt="loading-spinner">
+                    </div>
+                    <div id="buttons">
+                        <div class="stat-button"><button class="btn selected-button" id="total">TOTAL STATISTICS</button></div>
+                        <div class="stat-button"><button class="btn unselected-button" id="daily">DAILY STATISTICS</button></div>
+                    </div>
+                    <section id="numerical-stats">
+                        <ul>
+                            <li class="card-style" id="cases-card">
+                                <div class="icon"><h3><i class="fas fa-search-plus"></i></h3></div>
+                                <div id="cases-text">
+                                    <h2></h2>
+                                    <p></p>
+                                </div>
+                            </li>
+                            <li class="card-style" id="recovered-card">
+                                <div class="icon"><h3><i class="far fa-heart"></i></h3></div>
+                                <div id="recovered-text">
+                                    <h2></h2>
+                                    <p></p>
+                                </div>
+                            </li>
+                            <li class="card-style" id="deaths-card">
+                                <div class="icon"><h3><i class="fas fa-procedures"></i></h3></div>
+                                <div id="deaths-text">
+                                    <h2></h2>
+                                    <p></p>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                    <section id="charts">
+                        <div id="chart-1"></div>
+                        <div id="chart-2"></div>
+                        <p id="chart-header"></p>
+                    </section>
+                </div>
+            </main>
+            <aside id="twitter">
+                <h2 id="twitter-header">RECENT TWEETS</h2>
+                <div id="twitter-loader">
+                    <img src="loading.gif" alt="loading-spinner">
+                </div>
+                <div id="twitter-feed">
+                </div>
+            </aside>
+        </div>
+        <footer>
+            <p>© 2021. Created by Priyanka de Silva. Data retrieved from <a href="https://hpb.health.gov.lk/en/api-documentation" target="_blank">Health Promotion Bureau of Sri Lanka</a>.</p>
+        </footer>
+    </div>
+    <script src="main.js"></script>
+    <script src="twitter.js"></script>
+</body>
+</html>
