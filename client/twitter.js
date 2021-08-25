@@ -12,6 +12,9 @@ loadMoreContainer.appendChild(loadMoreBtn);
 
 const twitterFeeding = document.querySelector('#twitter-feed');
 const twitterLoader = document.querySelector('#twitter-loader');
+const refreshTweets = document.querySelector('#refresh-tweets');
+
+const twitter = document.querySelector('#twitter');
 
 
 window.twttr = (function(d, s, id) {
@@ -75,4 +78,12 @@ twitterFeeding.addEventListener('scroll', (e) => {
   } else {
     twitterHeader.classList.remove('twitter-header-shadow');
   }
-}) 
+});
+
+refreshTweets.addEventListener('click', () => {
+  twitter.appendChild(twitterLoader);
+  while (twitterFeeding.firstChild) {
+    twitterFeeding.removeChild(twitterFeeding.firstChild);
+  }
+  socket.emit('refresh', 'refreshEvent');
+})
