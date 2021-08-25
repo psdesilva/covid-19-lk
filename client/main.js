@@ -215,7 +215,12 @@ var options = {
       }
     ],
     xaxis: {
-      type: 'datetime'
+      type: 'datetime',
+      labels: {
+        style: {
+          colors: 'rgb(90, 90, 90)'
+        }
+      }
     },
     dataLabels: {
         enabled: false
@@ -237,10 +242,20 @@ var options = {
         width: strokeWidth,
         dashArray: 0,      
     },
+    yaxis: {
+      labels: {
+        style: {
+          colors: 'rgb(90, 90, 90)'
+        }
+      }
+    },
     legend: {
         itemMargin: {
             horizontal: 20,
             vertical: 20
+        },
+        labels: {
+          colors: 'rgb(90, 90, 90)'
         }
     },
     colors: ['#2E93fA', '#35b34a', '#FF4560']
