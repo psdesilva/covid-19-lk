@@ -45,12 +45,10 @@ function testFunction (socket) {
         nextToken = '';
         tweetList = response.data.data;
         nextToken = response.data.meta.next_token;
-        console.log(nextToken);
         tweetList.forEach(tweet => {
             ids.push(tweet.id);
         })
         socket.emit('tweetIds', ids)
-        console.log(`new ids`, ids);
     })
     .catch(error => {
         console.log(error);
@@ -59,7 +57,7 @@ function testFunction (socket) {
     socket.on('refresh', () => {
         axios.get('https://api.twitter.com/2/tweets/search/recent?query=(covid19sl%20OR%20covid19lk)%20-is%3Aretweet', {
     headers: {
-    Authorization: 'Bearer ' + TOKEN // Appends the variable which holds the token to the header of the request
+        Authorization: 'Bearer ' + TOKEN // Appends the variable which holds the token to the header of the request
     }
     })
     .then(response => {
@@ -67,12 +65,10 @@ function testFunction (socket) {
         nextToken = ''; // Clears the token required for pagination
         tweetList = response.data.data; // Stores an array of tweet objects retrieved from the API
         nextToken = response.data.meta.next_token;  // Stores the token required for pagination
-        console.log(nextToken);
         tweetList.forEach(tweet => {  // Iterates through the tweetList Array to grab the ID of each tweet object
             ids.push(tweet.id);
         })
         socket.emit('tweetIds', ids)  // Emits the ID array to the client
-        console.log(ids);
     })
     .catch(error => {
         console.log(error); // Catches and logs and errors 
@@ -92,12 +88,10 @@ function getTweetIds (socket) {
         nextToken = ''; // Clears the token required for pagination
         tweetList = response.data.data; // Stores an array of tweet objects retrieved from the API
         nextToken = response.data.meta.next_token;  // Stores the token required for pagination
-        console.log(nextToken);
         tweetList.forEach(tweet => {  // Iterates through the tweetList Array to grab the ID of each tweet object
             ids.push(tweet.id);
         })
         socket.emit('tweetIds', ids)  // Emits the ID array to the client
-        console.log(ids);
     })
     .catch(error => {
         console.log(error); // Catches and logs and errors 
